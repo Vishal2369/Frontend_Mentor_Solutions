@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
+:root{
+    --white : hsl(0, 0%, 100%);
+    --cyan :  hsl(178, 100%, 50%);
+    --blue-100 : hsl(215, 51%, 70%);
+    --blue-400 : hsl(215, 32%, 27%);
+    --blue-500 : hsl(216, 50%, 16%);
+    --blue-600 : hsl(217, 54%, 11%);
+
+    --fs-300 : 1.125rem;
+    --fs-400 : 1.25rem;
+    --fs-600 : 1.5rem;
+
+    --fw-300 : 300;
+    --fw-400 : 400;
+    --fw-600 : 600;
+}
+
+@media screen and (max-width : 375px) {
+    :root{
+        --fs-300 : 1rem;
+        --fs-400 : 1.125rem;
+        --fs-600 : 1.25rem;
+    }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p{
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--blue-600);
+  display: grid;
+  place-items: center;
+  color: var(--blue-100);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+.flow > * + * {
+  margin-top: 0.75em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h1 {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-600);
+}
+
+h3 {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+}
+
+p {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-300);
+}
+
+.divider{
+    border-top: 1px solid var(--blue-400);
+}
+
+.hover-effect{
+    cursor: pointer;
+}
+
+.hover-effect:hover{
+    color: var(--cyan);
+}
+
+.card {
+    width: min(90%, 22rem);
+    background-color: var(--blue-500);
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+}
+
+.card__header {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card__header:hover .overlay{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: hsla(178, 100%, 50%, .6);;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.card__title{
+    color: var(--white);
+}
+
+.card__info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__info > div {
+    display: flex;
+    align-items: center;
+}
+
+.card__info img{
+    margin-right: 0.3rem;
+}
+
+.card__info h3 {
+    color: var(--cyan);
+}
+
+.card__profile{
+    display: flex;
+    align-items: center;
+}
+
+.profile__avatar{
+    width: 2.5em;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+}
+
+.card__profile p{
+    margin-left: 1rem;
+}
+
+.card__profile a{
+    text-decoration: none;
+    color: var(--white);
+}
